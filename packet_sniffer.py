@@ -1,4 +1,3 @@
-# Import the required modules
 import sys
 import datetime
 from scapy.all import *
@@ -22,7 +21,7 @@ def packet_callback(packet):
     src_mac = packet[Ether].src
     dst_mac = packet[Ether].dst
     protocol = packet[IP].proto
-
+    
     response_time = packet.time - packet[IP].time
 
     if protocol == 6:
